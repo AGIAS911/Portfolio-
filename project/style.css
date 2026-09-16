@@ -583,6 +583,19 @@ html {
     background-color: rgba(100, 255, 218, 0.1);
 }
 
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    padding: 20px 0px;
+    box-shadow: 0px 0px 10px rgba(194, 184, 184, 0.1);
+
+
+}
+
 @media (max-width: 900px) {
     .section-container {
         flex-direction: column;
@@ -774,8 +787,11 @@ html {
 
     .social-sidebar:hover {
         opacity: 1;
-    }   
-}
-footer{
-    
+    }
+
+    .footer-container {
+
+        flex-direction: column;
+        text-align: center;
+    }
 }
