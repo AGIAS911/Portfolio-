@@ -10,6 +10,11 @@ body {
     line-height: 1.5;
 }
 
+.logo-container {
+    margin-left: 0;
+    padding-left: 0;
+}
+
 .logo {
     width: 55px;
     height: 55px;
@@ -18,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-left: 0;
 }
 
 .logo::before {
@@ -25,14 +31,12 @@ body {
     position: absolute;
     inset: 0;
     background-color: #64ffda;
-    clip-path: polygon(
-        50% 0%,
-        100% 25%,
-        100% 75%,
-        50% 100%,
-        0% 75%,
-        0% 25%
-    );
+    clip-path: polygon(50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%);
     transition: all 0.3s ease;
 }
 
@@ -41,14 +45,12 @@ body {
     position: absolute;
     inset: 2px;
     background-color: #0a192f;
-    clip-path: polygon(
-        50% 0%,
-        100% 25%,
-        100% 75%,
-        50% 100%,
-        0% 75%,
-        0% 25%
-    );
+    clip-path: polygon(50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%);
 }
 
 .logo-char {
@@ -73,18 +75,17 @@ body {
 
 .site-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px 100px;
+    padding: 20px;
     height: 100px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: transform 0.4s ease;
+    background-color: #0a192f;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-bar {
@@ -130,14 +131,15 @@ body {
 
 .resume-btn:hover {
     border: 2px solid #64ffda;
-    transition:  ease-in-out;
+    transition: ease-in-out;
     color: #64a596 !important;
 }
+
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    height: 100vh;
+    width: 100%;
     padding-left: 100px;
     margin-top: 150px;
     margin-left: 100px;
@@ -239,6 +241,31 @@ h3::after {
     line-height: 1.6;
 }
 
+h4 {
+    font-size: x-large;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.grid-card {
+    color: #64ffda;
+    border: 1px solid #64e0d6;
+    border-radius: 50px;
+    text-align: center;
+    width: 100px;
+    transition: 0.1s ease;
+}
+
+.grid-card:hover {
+    background-color: rgba(211, 218, 216, 0.1);
+    transform: scale(1.03);
+}
+
 .image-wrapper {
     position: relative;
     width: 300px;
@@ -283,9 +310,6 @@ h3::after {
 .image-wrapper:hover::after {
     transform: translate(5px, 5px);
 }
-
-
-
 
 .jobs-section h3 {
     display: flex;
@@ -351,9 +375,8 @@ h3::after {
 
 .tab-panel {
     display: none;
-    scroll-margin-top: 100px; 
+    scroll-margin-top: 100px;
 }
-
 
 .tab-panel:target {
     display: block;
@@ -415,10 +438,16 @@ html {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .projects-grid {
     display: grid;
@@ -500,26 +529,6 @@ html {
     color: #64ffda;
 }
 
-@media (max-width: 900px) {
-    .section-container {
-        flex-direction: column;
-    }
-
-    .section-content {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        padding: 25px 20px;
-    }
-}
-
 .contact-form {
     max-width: 700px;
     margin: 0 auto;
@@ -572,4 +581,201 @@ html {
 
 .submit-button:hover {
     background-color: rgba(100, 255, 218, 0.1);
+}
+
+@media (max-width: 900px) {
+    .section-container {
+        flex-direction: column;
+    }
+
+    .section-content {
+        width: 100%;
+    }
+
+    .hero {
+        margin-left: 20px;
+        padding-left: 0;
+        margin-top: 130px;
+    }
+
+    .span-name {
+        font-size: 48px;
+    }
+
+    .description {
+        width: 100%;
+    }
+
+    .nav-bar {
+        right: 30px;
+    }
+
+    .nav-list {
+        gap: 20px;
+    }
+
+    .jobs-container {
+        flex-direction: column;
+    }
+
+    .tabs-list {
+        flex-direction: row;
+        width: 100%;
+        border-left: none;
+        border-bottom: 2px solid #233554;
+        overflow-x: auto;
+    }
+
+    .tab-button {
+        margin-left: 0;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    .tab-button.active,
+    .tab-button:target {
+        border-left: none;
+        border-bottom: 2px solid #64ffda;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    #about {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    #about .section-content {
+        width: 100%;
+    }
+
+    #about .image-wrapper {
+        width: 220px;
+        height: 260px;
+        max-width: none;
+        margin-top: 0;
+        flex: 0 0 auto;
+    }
+
+    #about .grid-container {
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        margin-top: 0;
+    }
+
+    #about .grid-container h4 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 25px 20px;
+    }
+
+    .site-header {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 20px;
+        row-gap: 12px;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .nav-bar {
+        position: static;
+        top: auto;
+        right: auto;
+        order: 2;
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px 16px;
+        width: 100%;
+    }
+
+    .nav-list a {
+        font-size: 12px;
+    }
+
+    .resume-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        margin-left: 20px;
+        margin-top: 160px;
+        padding-left: 0;
+    }
+
+    .span-name {
+        font-size: 34px;
+    }
+
+    .section-content {
+        padding: 0 20px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h3::after {
+        width: 100px;
+    }
+
+    .jobs-section h3::after {
+        width: 100px;
+    }
+
+    .image-wrapper {
+        height: 260px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        flex-direction: unset;
+    }
+
+    .grid-container h4 {
+        grid-column: 1 / -1;
+    }
+
+    .grid-card {
+        width: 100%;
+    }
+
+    .social-sidebar {
+        opacity: 0.11;
+        transition: opacity 0.3s ease;
+    }
+
+    .social-sidebar:hover {
+        opacity: 1;
+    }   
+}
+footer{
+    
 }
