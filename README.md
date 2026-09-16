@@ -61,8 +61,8 @@ Portfolio/
 ## Contact
 You can find me on:
 - [GitHub](https://github.com/AGIAS911)
-- [LinkedIn](#) <!-- Add your LinkedIn URL -->
-- [Email](#) <!-- Add your Email -->
+- [LinkedIn](https://www.linkedin.com/in/anasalsuod/) <!-- Add your LinkedIn URL -->
+- [Email](anasgabuasluod@gmail.com) <!-- Add your Email -->
 
 ## License
 This project is for personal portfolio purposes.
