@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +9,8 @@ body {
     color: rgba(255, 255, 255, 0.507);
     font-family: monospace;
     line-height: 1.5;
+    position: relative;
+    min-height: 100vh;
 }
 
 .logo-container {
@@ -140,9 +143,8 @@ body {
     flex-direction: column;
     justify-content: start;
     width: 100%;
-    padding-left: 100px;
     margin-top: 150px;
-    margin-left: 100px;
+    
 }
 
 .span-name {
@@ -151,7 +153,7 @@ body {
 }
 
 .description {
-    width: 50%;
+    width: 100%;
 }
 
 .social-sidebar {
@@ -592,8 +594,6 @@ html {
     gap: 30px;
     padding: 20px 0px;
     box-shadow: 0px 0px 10px rgba(194, 184, 184, 0.1);
-
-
 }
 
 @media (max-width: 900px) {
@@ -766,31 +766,62 @@ html {
     }
 
     .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        flex-direction: unset;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: fit-content;
+    margin: 0 auto;
+}
 
-    .grid-container h4 {
-        grid-column: 1 / -1;
-    }
+.grid-container h4 {
+    grid-column: 1 / -1;
+}
 
     .grid-card {
         width: 100%;
     }
 
-    .social-sidebar {
-        opacity: 0.11;
-        transition: opacity 0.3s ease;
+ 
+.social-sidebar {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        opacity: 1 !important;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
     }
 
-    .social-sidebar:hover {
-        opacity: 1;
+    .social-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .social-list li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .social-list a {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-list::after {
+        display: none;
     }
 
     .footer-container {
-
+        padding-bottom: 80px;
         flex-direction: column;
         text-align: center;
     }
